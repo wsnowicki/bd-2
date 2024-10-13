@@ -8,5 +8,6 @@ Projekt z baz danych
 2. Utwórz plik .env i wypełnij go odpowiednimi ustawieniami dla twoich potrzeb.
 ```
 cp .env.example .env
+vim .env
 ```
 
