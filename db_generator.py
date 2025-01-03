@@ -60,7 +60,7 @@ def create_tables():
         cursor.execute("""
             CREATE TABLE borrowers (
                 borrower_id SERIAL PRIMARY KEY,
-                name VARCHAR(255),
+                name VARCHAR(255) NOT NULL,
                 email VARCHAR(255),
                 phone VARCHAR(15)
             );
@@ -73,15 +73,15 @@ def create_tables():
 
             CREATE TABLE authors (
                 author_id SERIAL PRIMARY KEY,
-                name VARCHAR(255)
+                name VARCHAR(255), NOT NULL
             );
 
             CREATE TABLE books (
                 isbn VARCHAR(13) PRIMARY KEY,
-                title VARCHAR(255),
+                title VARCHAR(255) NOT NULL,
                 author_id INTEGER REFERENCES authors(author_id),
                 year_published INTEGER,
-                is_available BOOLEAN,
+                is_available BOOLEAN DEFAULT TRUE,
                 cover_image BYTEA
             );
 
