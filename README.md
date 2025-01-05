@@ -3,7 +3,13 @@ Projekt z baz danych
 
 
 ## Uruchamianie
-1. Utwórz bazę danych oraz użytkownika w postgresie:
+1. Zainstaluj wymagane pakiety Pythonowe:
+    - flask
+    - python-dotenv
+    - psycopg2-binary (postgresql)
+lub ich alternatywy
+
+2. Utwórz bazę danych oraz użytkownika w postgresie:
 
 Na systemie Linux:
 ```bash
@@ -14,7 +20,7 @@ lub na systemie Windows:
 py db_generator.py
 ```
 
-2. Utwórz plik .env i wypełnij go odpowiednimi ustawieniami dla twoich potrzeb.
+3. Utwórz plik .env i wypełnij go odpowiednimi ustawieniami dla twoich potrzeb.
 ```bash
 cp .env.example .env
 vim .env
