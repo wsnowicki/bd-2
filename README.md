@@ -4,6 +4,7 @@ Projekt z baz danych
 
 ## Uruchamianie
 1. Utwórz bazę danych oraz użytkownika w postgresie:
+
 Na systemie Linux:
 ```bash
 python3 db_generator.py
