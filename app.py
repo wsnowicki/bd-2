@@ -1,5 +1,14 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
+from dotenv import load_dotenv
+from os import getenv
 
+# Wczytanie zmiennych z pliku .env
+load_dotenv()
+http_host = getenv("HTTP_HOST")
+http_port = getenv("HTTP_PORT")
+http_threads = getenv("HTTP_THREADS")
+
+# Stworzenie aplikacji i nadanie tajnego klucza
 app = Flask(__name__)
 app.secret_key = 'super_tajny_klucz_ktory_napewno_nie_jest_udostepniony_w_repo_w_plain_textZZ'
 
@@ -51,5 +60,5 @@ def page_not_found(e):
     return render_template('Blad.html'), 404
 
 if __name__ == '__main__':
-    app.run(debug=True, host='192.168.1.201')
+    app.run(debug=True, host=http_host, port=http_port)
 
