@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cibus Animae</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="top-bar">
+        <img src="logo.png" alt="Error Image" vertical-align: middle; width="auto">
+        <div id="top-bar-buttons" style="margin-left: auto;"></div>
+    </div>
+
+    <div class="container">
+        <div style="display: flex; align-items: center;">
+            <img src="search.png" class="header-icon" alt="Error Image" style="vertical-align: middle; ">
+            <h2>Wyszukaj</h2>
+        </div>
+        <div id="alert" class="alert" style="display: none;"></div>
+        <div class="form-group">
+            <label for="nazwaKsiazki">Nazwa:</label>
+            <input type="text" id="nazwaKsiazki" name="nazwaKsiazki">
+        </div>
+        <div class="form-group">
+            <label for="autor">Autor:</label>
+            <input type="text" id="autor" name="autor">
+        </div>
+        <button id="searchButton">Wyszukaj</button>
+    </div>
+    <script>
+        function updateTopBar() {
+            const isLoggedIn = false; // Change this based on actual login status
+            const topBarButtons = document.getElementById('top-bar-buttons');
+            topBarButtons.innerHTML = '';
+
+            if (isLoggedIn) {
+                topBarButtons.innerHTML += '<button onclick="location.href=\'profile.html\'">Profil</button>';
+                topBarButtons.innerHTML += '<button onclick="location.href=\'logout.html\'">Wyloguj</button>';
+                topBarButtons.innerHTML += '<button onclick="location.href=\'EkranWyszukiwania.html\'">Wyszukiwanie</button>';
+            } else {
+                topBarButtons.innerHTML += '<button onclick="location.href=\'about.html\'">O stronie</button>';
+                topBarButtons.innerHTML += '<button onclick="location.href=\'EkranLogowania.html\'">Logowanie</button>';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', updateTopBar);
+
+        document.getElementById('searchButton').addEventListener('click', function() {
+            const nazwaKsiazki = document.getElementById('nazwaKsiazki').value;
+            const autor = document.getElementById('autor').value;
+
+            fetch('https://DORABANAbazaCIBUSanimae.com/search', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ nazwaKsiazki: nazwaKsiazki, autor: autor })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    showAlert('Brak wyników');
+                } else {
+                    console.log('Success:', data);
+                    location.href = 'listaszukanych.html';
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                location.href='Blad.html';
+            });
+        });
+
+        function showAlert(message) {
+            const alertDiv = document.getElementById('alert');
+            alertDiv.textContent = message;
+            alertDiv.style.display = 'block';
+        }
+
+        window.addEventListener('error', function() {
+            location.href = 'listaszukanych.html';
+        });
+    </script>
+</body>
+</html>

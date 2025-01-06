@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Szukanych</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="top-bar">
+        <img src="logo.png" alt="Error Image" vertical-align: middle; width="auto">
+        <div id="top-bar-buttons" style="margin-left: auto;"></div>
+    </div>
+
+    <div class="container">
+        <h2>Lista Szukanych</h2>
+        <div id="book-list" class="book-list"></div>
+        <div class="pagination">
+            <button onclick="loadPage(1)">1</button>
+            <button onclick="loadPage(2)">2</button>
+            <button onclick="loadPage(3)">3</button>
+            <button onclick="loadPage(4)">4</button>
+            <button onclick="loadPage(5)">5</button>
+        </div>
+    </div>
+
+    <script>
+        function updateTopBar() {
+            const isLoggedIn = true; // Change this based on actual login status
+            const topBarButtons = document.getElementById('top-bar-buttons');
+            topBarButtons.innerHTML = '';
+
+            if (isLoggedIn) {
+                topBarButtons.innerHTML += '<button onclick="location.href=\'profile.html\'">Profil</button>';
+                topBarButtons.innerHTML += '<button onclick="location.href=\'logout.html\'">Wyloguj</button>';
+                topBarButtons.innerHTML += '<button onclick="location.href=\'EkranWyszukiwania.html\'">Wyszukiwanie</button>';
+            } else {
+                topBarButtons.innerHTML += '<button onclick="location.href=\'about.html\'">O stronie</button>';
+                topBarButtons.innerHTML += '<button onclick="location.href=\'EkranLogowania.html\'">Logowanie</button>';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateTopBar();
+            loadPage(1);
+        });
+
+        function loadPage(pageNumber) {
+            fetch(`https://DORABANAbazaCIBUSanimae.com/books?page=${pageNumber}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                const bookList = document.getElementById('book-list');
+                bookList.innerHTML = '';
+                data.books.forEach(book => {
+                    const bookItem = document.createElement('div');
+                    bookItem.className = 'book-item';
+                    bookItem.innerHTML = `
+                        <img src="${book.picture}" alt="Book Image" class="book-image">
+                        <div class="book-details">
+                            <h3>${book.name}</h3>
+                            <p>${book.author}</p>
+                            <button onclick="orderBook(${book.id})">Zamów</button>
+                            <button onclick="selectBook(${book.id})">Zaznacz</button>
+                        </div>
+                    `;
+                    bookList.appendChild(bookItem);
+                });
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                location.href = 'Blad.html';
+            });
+        }
+
+        function orderBook(bookId) {
+            // Implement order book functionality
+            console.log('Order book:', bookId);
+        }
+
+        function selectBook(bookId) {
+            // Implement select book functionality
+            console.log('Select book:', bookId);
+        }
+
+        window.addEventListener('error', function() {
+            location.href = 'Blad.html';
+        });
+    </script>
+</body>
+</html>
