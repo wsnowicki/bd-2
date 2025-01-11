@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cibus Animae</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
 
     <div class="top-bar">
-        <img src="logo.png" alt="Error Image" vertical-align: middle; width="auto">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Error Image" vertical-align: middle; width="auto">
         <div id="top-bar-buttons" style="margin-left: auto;"></div>
     </div>
 
     <div class="container">
         <div style="display: flex; align-items: center;">
-            <img src="login.png" class="header-icon" alt="Error Image" style="vertical-align: middle; ">    
+            <img src="{{ url_for('static', filename='login.png') }}" class="header-icon" alt="Error Image" style="vertical-align: middle; ">    
             <h2>Logowanie</h2>
         </div>
         <div id="alert" class="alert" style="display: none;"></div>
@@ -88,7 +88,7 @@
         }
 
         window.addEventListener('error', function() {
-            location.href = 'Blad.html';
+            location.href = ' {{ url_for("error") }}';
         });
     </script>
 </body>
