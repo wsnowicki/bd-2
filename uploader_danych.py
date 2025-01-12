@@ -49,21 +49,64 @@ def insert_values_into_db():
             #cursor.execute(zap)
         f.close()
         
-        #f = open('mockdata/status.json')
-        #data = json.load(f)
-        #for i in data['status']:
-            
-        #    zap = 'INSERT INTO authors (id, status,description) VALUES ("'
-        #    zap += str(i['id'])
-        #    zap+='","'
-        #    zap += str(i['status'])
-        #    zap+='","'
-        #    zap += str(i['description'])
-        #    zap+='");'
-        #    print(zap)
+        f = open('mockdata/status.json')
+        data = json.load(f)
+        for i in data['status']:
+                
+            zap = 'INSERT INTO status (id, status,description) VALUES ("'
+            zap += str(i['id'])
+            zap+='","'
+            zap += str(i['status'])
+            zap+='","'
+            zap += str(i['description'])
+            zap+='");'
+            print(zap)
             #cursor.execute(zap)
-        #f.close()
-        
+        f.close()
+        f = open('mockdata/loans.json')
+        data = json.load(f)
+        for i in data['loans']:
+                
+            zap = 'INSERT INTO loans (loan_id, book_id,borrower_id,loan_date,return_date,status) VALUES ("'
+            zap += str(i['loan_id'])
+            zap+='","'
+            zap += str(i['book_id'])
+            zap+='","'
+            zap += str(i['borrower_id'])
+            zap+='","'
+            zap += str(i['loan_date'])
+            zap+='","'
+            zap += str(i['return_date'])
+            zap+='","'
+            zap += str(i['status'])
+            zap+='");'
+            print(zap)
+            #cursor.execute(zap)
+        f.close()
+        f = open('mockdata/genres.json')
+        data = json.load(f)
+        for i in data['genres']:
+                
+            zap = 'INSERT INTO genres (genre_id, name) VALUES ("'
+            zap += str(i['genre_id'])
+            zap+='","'
+            zap += str(i['name'])
+            zap+='");'
+            print(zap)
+            #cursor.execute(zap)
+        f.close()
+        f = open('mockdata/book_genres.json')
+        data = json.load(f)
+        for i in data['book_genres']:
+                
+            zap = 'INSERT INTO book_genres (genre_id, book_isbn) VALUES ("'
+            zap += str(i['genre_id'])
+            zap+='","'
+            zap += str(i['book_isbn'])
+            zap+='");'
+            print(zap)
+            #cursor.execute(zap)
+        f.close()
         f = open('mockdata/book.json')
         data = json.load(f)
         for i in data['books']:
@@ -79,7 +122,7 @@ def insert_values_into_db():
             zap += str(i['is_available'])
             zap+='","'
             img=str(i['cover_image'])
-            with open(f"mockdata/pobrany_{img}", "rb") as file:
+            with open(f"mockdata/photos/pobrany_{img}", "rb") as file:
             	zap+=str(file.read())
             zap+='");'
             #print(zap)
