@@ -68,12 +68,16 @@ def search(nazwa,author):
         zap += str(nazwa)
         zap+="%;"
         odp=cursor.execute(zap)
-    	return jsonify(odp)
+        return jsonify(odp)
     return render_template('EkranWyszukiwania.html')
 
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('Blad.html'), 404
+
+@app.route('/error')
+def error():
+    return 404
 
 if __name__ == '__main__':
     app.run(debug=True, host=http_host, port=http_port)
