@@ -1,0 +1,16 @@
+{
+  "status": [
+    {
+     "id":"1",
+     "status":"avaible", 
+     "description":"this book is avaible"
+    },
+    {
+     "id":"2",
+     "status":"borrowed", 
+     "description":"this book is unavaible"
+    }
+    
+  
+  ]
+}

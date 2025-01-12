@@ -1,0 +1,12 @@
+{
+  "books": [
+    {
+    "isbn":"tfdrdrseesr",
+    "title":"O dwóh takich co wymyślili UML-a", 
+    "author_id":"1",
+    "year_published":"2020", 
+    "is_available":"1", 
+    "cover_image":"img"
+    }
+  ]
+}

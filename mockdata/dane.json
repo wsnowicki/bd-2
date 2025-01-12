@@ -1,0 +1,22 @@
+{
+  "borrowers": [
+    {
+     "borrower_id":"1",
+     "name":"Jan", 
+     "email":"GulagForJava@gmail.com", 
+     "phone":"542491443"
+    },
+    {
+     "borrower_id":"2",
+     "name":"Wincenty", 
+     "email":"PhPmaster@gmail.com", 
+     "phone":"233242121"
+    },
+    {
+      "borrower_id":"3",
+     "name":"Jan", 
+     "email":"Stonemaster@gmail.com", 
+     "phone":"334715612"
+    }
+  ]
+}
