@@ -27,7 +27,9 @@
             <img src="{{ url_for('static', filename='login.png') }}" class="header-icon" alt="Error Image" style="vertical-align: middle;">    
             <h2>Logowanie</h2>
         </div>
-        <div id="alert" class="alert" style="display: none;"></div>
+        {% if alert %}
+        <div id="alert" class="alert">{{ alert }}</div>
+        {% endif %}
         <form action="{{ url_for('login') }}" method="post">
             <div class="form-group">
                 <label for="login">Login:</label>
