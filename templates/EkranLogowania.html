@@ -57,7 +57,7 @@
                 return;
             }
 
-            fetch('https://DORABANAbazaCIBUSanimae.com/search', {
+            fetch("{{ url_for('login') }}", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -71,7 +71,7 @@
                     isLoggedIn = true;
                 } else {
                     console.log('Success:', data);
-                    isLoggedIn = true;s
+                    isLoggedIn = true;
                 }
             })
             .catch((error) => {
@@ -88,7 +88,7 @@
         }
 
         window.addEventListener('error', function() {
-            location.href = ' {{ url_for("error") }}';
+            location.href = '{{ url_for("error") }}';
         });
     </script>
 </body>
