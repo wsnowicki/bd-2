@@ -6,21 +6,21 @@ import os
 def insert_values_into_db():
     try:
         # Pobierz dane do połączenia z pliku .env
-        #db_user = os.getenv("DB_USER")
-        #db_password = os.getenv("DB_PASSWORD")
-        #db_host = os.getenv("DB_HOST", "127.0.0.1")
-        #db_port = os.getenv("DB_PORT", "5432")
-        #db_name = os.getenv("DB_DATABASE", "biblioteka")
+        db_user = os.getenv("DB_USER")
+        db_password = os.getenv("DB_PASSWORD")
+        db_host = os.getenv("DB_HOST", "127.0.0.1")
+        db_port = os.getenv("DB_PORT", "5432")
+        db_name = os.getenv("DB_DATABASE", "biblioteka")
 
         # Połączenie z nowo utworzoną bazą danych
-        #connection = psycopg2.connect(
-        #    dbname=db_name,
-        #    user=db_user,
-        #    password=db_password,
-        #    host=db_host,
-        #    port=db_port
-        #)
-        #cursor = connection.cursor()
+        connection = psycopg2.connect(
+            dbname=db_name,
+            user=db_user,
+            password=db_password,
+            host=db_host,
+            port=db_port
+        )
+        cursor = connection.cursor()
         f = open('mockdata/borrowers.json')
         data = json.load(f)
         for i in data['borrowers']:

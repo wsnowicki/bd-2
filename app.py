@@ -21,7 +21,7 @@ users = {
 @app.route('/')
 def home():
     return redirect(url_for('login'))
-
+    
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -40,7 +40,7 @@ def logout():
     return redirect(url_for('login'))
 
 @app.route('/search', methods=['GET', 'POST'])
-def search():
+def search(nazwa,author):
     if 'user' not in session:
         return redirect(url_for('login'))
 
@@ -48,11 +48,27 @@ def search():
         nazwa_ksiazki = request.form.get('nazwaKsiazki', '')
         autor = request.form.get('autor', '')
 
-        # Tutaj mock do wyszukiwania lol
-        if nazwa_ksiazki == "Example" and autor == "Author":
-            return jsonify({"result": "Znaleziono książkę"})
-        else:
-            return render_template('EkranWyszukiwania.html', alert="Brak wyników")
+        # Tutaj wyszukiwanie
+        db_user = os.getenv("DB_USER")
+        db_password = os.getenv("DB_PASSWORD")
+        db_host = os.getenv("DB_HOST", "127.0.0.1")
+        db_port = os.getenv("DB_PORT", "5432")
+        db_name = os.getenv("DB_DATABASE", "biblioteka")
+        connection = psycopg2.connect(
+            dbname=db_name,
+            user=db_user,
+            password=db_password,
+            host=db_host,
+            port=db_port
+        )
+        cursor = connection.cursor()
+        zap="SELECT books.title,books.is_available,books.year_published,books.isbn,authors.name FROM books INNER JOIN authors ON books.author_id = authors.author_id WHERE authors.name LIKE "
+        zap+=str(author)
+        zap+="% AND books.title LIKE "
+        zap += str(nazwa)
+        zap+="%;"
+        odp=cursor.execute(zap)
+    	return jsonify(odp)
     return render_template('EkranWyszukiwania.html')
 
 @app.errorhandler(404)
