@@ -11,7 +11,7 @@
     <div class="top-bar">
         <img src="{{ url_for('static', filename='logo.png') }}" alt="Error Image" vertical-align: middle; width="auto">
         <div id="top-bar-buttons" style="margin-left: auto;">
-            {% if current_user.is_authenticated %}
+            {% if current_user.is_authenticated %} // 1
                 <button onclick="location.href='{{ url_for('profile') }}'">Profil</button>
                 <button onclick="location.href='{{ url_for('logout') }}'">Wyloguj</button>
                 <button onclick="location.href='{{ url_for('search') }}'">Wyszukiwanie</button>
