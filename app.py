@@ -4,14 +4,13 @@ from os import getenv
 
 # Wczytanie zmiennych z pliku .env
 load_dotenv()
-HTTP_HOST = getenv("HTTP_HOST")
-HTTP_PORT = getenv("HTTP_PORT")
-HTTP_THREADS = getenv("HTTP_THREADS")
-SECRET_KEY = getenv('HTTP_SECRET')
+http_host = getenv("HTTP_HOST")
+http_port = getenv("HTTP_PORT")
+http_threads = getenv("HTTP_THREADS")
 
 # Stworzenie aplikacji i nadanie tajnego klucza
 app = Flask(__name__)
-app.secret_key = SECRET_KEY
+app.secret_key = 'super_tajny_klucz_ktory_napewno_nie_jest_udostepniony_w_repo_w_plain_textZZ'
 
 # Przykładowa baza użytkowników
 users = {
@@ -72,15 +71,10 @@ def search(nazwa,author):
     	return jsonify(odp)
     return render_template('EkranWyszukiwania.html')
 
-@app.route('/about')
-def about():
-    return render_template('about.html')
-
-
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('Blad.html'), 404
 
 if __name__ == '__main__':
-    app.run(debug=True, host=HTTP_HOST, port=HTTP_PORT)
+    app.run(debug=True, host=http_host, port=http_port)
 
