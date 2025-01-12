@@ -7,6 +7,30 @@
     {
     "author_id":"2",
     "name":"Juliusz Strzegomski" 
+    },
+    {
+    "author_id":"3",
+    "name":"Adam Sienkiewicz" 
+    },
+    {
+    "author_id":"4",
+    "name":"Juan Maria Rodrigez " 
+    },
+    {
+    "author_id":"5",
+    "name":"Jan Krzesło" 
+    },
+    {
+    "author_id":"6",
+    "name":"Piotr Dziekan" 
+    },
+    {
+    "author_id":"7",
+    "name":"ryszad Noga" 
+    },
+    {
+    "author_id":"8",
+    "name":"Włodek Woda" 
     }
   ]
 }

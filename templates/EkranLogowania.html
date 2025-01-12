@@ -40,5 +40,69 @@
             <button type="submit">Zaloguj</button>
         </form>
     </div>
+
+
+    <script>
+        function updateTopBar() {
+            const isLoggedIn = false; // Change this based on actual login status
+            const topBarButtons = document.getElementById('top-bar-buttons');
+            topBarButtons.innerHTML = '';
+
+            if (isLoggedIn) {
+                topBarButtons.innerHTML += '<button onclick="location.href=\'profile.html\'">Profil</button>';
+                topBarButtons.innerHTML += '<button onclick="location.href=\'logout.html\'">Wyloguj</button>';
+                topBarButtons.innerHTML += '<button onclick="location.href=\'EkranWyszukiwania.html\'">Wyszukiwanie</button>';
+            } else {
+                topBarButtons.innerHTML += '<button onclick="location.href=\'about.html\'">O stronie</button>';
+                topBarButtons.innerHTML += '<button onclick="location.href=\'EkranLogowania.html\'">Logowanie</button>';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', updateTopBar);
+
+        document.getElementById('loginButton').addEventListener('click', function() {
+            const login = document.getElementById('login').value;
+            const password = document.getElementById('password').value;
+
+            if (!login || !password) {
+                showAlert('Proszę wypełnić wszystkie pola');
+                return;
+            }
+
+            fetch("{{ url_for('login') }}", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ login: login, password: password })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    showAlert('Błędny login lub hasło');
+                    isLoggedIn = true;
+                } else {
+                    console.log('Success:', data);
+                    isLoggedIn = true;
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                showAlert('Błędny login lub hasło');
+                isLoggedIn = true;
+            });
+        });
+
+        function showAlert(message) {
+            const alertDiv = document.getElementById('alert');
+            alertDiv.textContent = message;
+            alertDiv.style.display = 'block';
+        }
+
+        window.addEventListener('error', function() {
+            location.href = '{{ url_for("error") }}';
+        });
+    </script>
+>>>>>>> 96174144d56dccea8e1dbb17a82028aa538db8d7
 </body>
 </html>

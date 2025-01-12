@@ -7,6 +7,46 @@
     "loan_date":"02-02-2024",
     "return_date":"03-03-2024",
     "status":"2"
-   }
+   },
+   {
+    "loan_id":"2",
+    "book_id":"4",
+    "borrower_id":"2",
+    "loan_date":"01-02-2024",
+    "return_date":"02-03-2024",
+    "status":"2"
+   },
+   {
+    "loan_id":"3",
+    "book_id":"5",
+    "borrower_id":"6",
+    "loan_date":"03-03-2024",
+    "return_date":"04-04-2024",
+    "status":"2"
+   },
+   {
+    "loan_id":"4",
+    "book_id":"7",
+    "borrower_id":"3",
+    "loan_date":"02-02-2024",
+    "return_date":"03-03-2024",
+    "status":"2"
+   },
+   {
+    "loan_id":"5",
+    "book_id":"1",
+    "borrower_id":"2",
+    "loan_date":"02-02-2024",
+    "return_date":"03-03-2024",
+    "status":"2"
+   },
+   {
+    "loan_id":"6",
+    "book_id":"8",
+    "borrower_id":"3",
+    "loan_date":"03-03-2024",
+    "return_date":"04-04-2024",
+    "status":"2"
+   },
   ]
 }

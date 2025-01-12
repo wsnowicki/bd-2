@@ -73,7 +73,7 @@ def create_tables():
 
             CREATE TABLE authors (
                 author_id SERIAL PRIMARY KEY,
-                name VARCHAR(255), NOT NULL
+                name VARCHAR(255) NOT NULL
             );
 
             CREATE TABLE books (
@@ -105,6 +105,7 @@ def create_tables():
                 PRIMARY KEY (genre_id, book_isbn)
             );
         """)
+        connection.commit()
         print("Tabele zostały utworzone pomyślnie.")
 
     except Exception as e:
@@ -115,6 +116,6 @@ def create_tables():
             connection.close()
 
 if __name__ == "__main__":
-    create_database()
+    # create_database()
     create_tables()
 
