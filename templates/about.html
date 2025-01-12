@@ -10,43 +10,28 @@
     
     <div class="top-bar">
         <img src="{{ url_for('static', filename='logo.png') }}" alt="Error Image" vertical-align: middle; width="auto">
-        <div id="top-bar-buttons" style="margin-left: auto;"></div>
+        <div id="top-bar-buttons" style="margin-left: auto;">
+            {% if is_logged_in %}
+                <button onclick="location.href='{{ url_for('profile') }}'">Profil</button>
+                <button onclick="location.href='{{ url_for('logout') }}'">Wyloguj</button>
+                <button onclick="location.href='{{ url_for('search') }}'">Wyszukiwanie</button>
+            {% else %}
+                <button onclick="location.href='{{ url_for('about') }}'">O stronie</button>
+                <button onclick="location.href='{{ url_for('login') }}'">Logowanie</button>
+            {% endif %}
+        </div>
     </div>
 
     <div class="container">
         <div style="display: flex; justify-content: center;">
             <img src="{{ url_for('static', filename='logocibus.png') }}" alt="Error Image" style="text-align: middle;" width="auto" height="400">
-            </div>
-            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
         </div>
+        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
     </div>
 
     <div style="display: flex; justify-content: center; margin-top: 100px;">
-        <img src=" {{ url_for('static', filename='add.png') }}" alt="Add" style="width: auto; height: 300px;">
+        <img src="{{ url_for('static', filename='add.png') }}" alt="Add" style="width: auto; height: 300px;">
     </div>
-
-    <script>
-        function updateTopBar() {
-            const isLoggedIn = false; // Change this based on actual login status
-            const topBarButtons = document.getElementById('top-bar-buttons');
-            topBarButtons.innerHTML = '';
-
-            if (isLoggedIn) {
-                topBarButtons.innerHTML += '<button onclick="location.href=\'profile.html\'">Profil</button>';
-                topBarButtons.innerHTML += '<button onclick="location.href=\'logout.html\'">Wyloguj</button>';
-                topBarButtons.innerHTML += '<button onclick="location.href=\'EkranWyszukiwania.html\'">Wyszukiwanie</button>';
-            } else {
-                topBarButtons.innerHTML += '<button onclick="location.href=\'about.html\'">O stronie</button>';
-                topBarButtons.innerHTML += '<button onclick="location.href=\'EkranLogowania.html\'">Logowanie</button>';
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', updateTopBar);
-
-        window.addEventListener('error', function() {
-            location.href = '{{ url_for('error') }}';
-        });
-    </script>
 
 </body>
 </html>

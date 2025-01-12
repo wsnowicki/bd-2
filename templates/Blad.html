@@ -10,7 +10,16 @@
     
     <div class="top-bar">
         <img src="{{ url_for('static', filename='cross.png') }}" alt="Error Icon">
-        <div id="top-bar-buttons" style="margin-left: auto;"></div>
+        <div id="top-bar-buttons" style="margin-left: auto;">
+            {% if current_user.is_authenticated %}
+                <button onclick="location.href='{{ url_for('profile') }}'">Profil</button>
+                <button onclick="location.href='{{ url_for('logout') }}'">Wyloguj</button>
+                <button onclick="location.href='{{ url_for('search') }}'">Wyszukiwanie</button>
+            {% else %}
+                <button onclick="location.href='{{ url_for('about') }}'">O stronie</button>
+                <button onclick="location.href='{{ url_for('login') }}'">Logowanie</button>
+            {% endif %}
+        </div>
     </div>
 
     <div class="container">
@@ -21,28 +30,5 @@
         </div>
         <h3>Przepraszamy, ale nie udało się znaleźć strony, której szukasz.</h3>
     </div>
-
-    <script>
-        function updateTopBar() {
-            const isLoggedIn = false; // Change this based on actual login status
-            const topBarButtons = document.getElementById('top-bar-buttons');
-            topBarButtons.innerHTML = '';
-
-            if (isLoggedIn) {
-                topBarButtons.innerHTML += '<button onclick="location.href=\'profile.html\'">Profil</button>';
-                topBarButtons.innerHTML += '<button onclick="location.href=\'logout.html\'">Wyloguj</button>';
-                topBarButtons.innerHTML += '<button onclick="location.href=\'EkranWyszukiwania.html\'">Wyszukiwanie</button>';
-            } else {
-                topBarButtons.innerHTML += '<button onclick="location.href=\'about.html\'">O stronie</button>';
-                topBarButtons.innerHTML += '<button onclick="location.href=\'EkranLogowania.html\'">Logowanie</button>';
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', updateTopBar);
-
-        window.addEventListener('error', function() {
-            location.href = "{{ url_for('error') }}";
-        });
-    </script>
 </body>
 </html>

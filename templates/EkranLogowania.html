@@ -9,87 +9,36 @@
 <body>
 
     <div class="top-bar">
-        <img src="{{ url_for('static', filename='logo.png') }}" alt="Error Image" vertical-align: middle; width="auto">
-        <div id="top-bar-buttons" style="margin-left: auto;"></div>
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Error Image" style="vertical-align: middle; width: auto;">
+        <div id="top-bar-buttons" style="margin-left: auto;">
+            {% if is_logged_in %}
+                <button onclick="location.href='{{ url_for('profile') }}'">Profil</button>
+                <button onclick="location.href='{{ url_for('logout') }}'">Wyloguj</button>
+                <button onclick="location.href='{{ url_for('search') }}'">Wyszukiwanie</button>
+            {% else %}
+                <button onclick="location.href='{{ url_for('about') }}'">O stronie</button>
+                <button onclick="location.href='{{ url_for('login') }}'">Logowanie</button>
+            {% endif %}
+        </div>
     </div>
 
     <div class="container">
         <div style="display: flex; align-items: center;">
-            <img src="{{ url_for('static', filename='login.png') }}" class="header-icon" alt="Error Image" style="vertical-align: middle; ">    
+            <img src="{{ url_for('static', filename='login.png') }}" class="header-icon" alt="Error Image" style="vertical-align: middle;">    
             <h2>Logowanie</h2>
         </div>
         <div id="alert" class="alert" style="display: none;"></div>
-        <div class="form-group">
-            <label for="login">Login:</label>
-            <input type="text" id="login" name="login">
-        </div>
-        <div class="form-group">
-            <label for="password">Hasło:</label>
-            <input type="text" id="password" name="password">
-        </div>
-        <button id="loginButton">Zaloguj</button>
+        <form action="{{ url_for('login_user') }}" method="post">
+            <div class="form-group">
+                <label for="login">Login:</label>
+                <input type="text" id="login" name="login">
+            </div>
+            <div class="form-group">
+                <label for="password">Hasło:</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <button type="submit">Zaloguj</button>
+        </form>
     </div>
-
-    <script>
-        function updateTopBar() {
-            const isLoggedIn = false; // Change this based on actual login status
-            const topBarButtons = document.getElementById('top-bar-buttons');
-            topBarButtons.innerHTML = '';
-
-            if (isLoggedIn) {
-                topBarButtons.innerHTML += '<button onclick="location.href=\'profile.html\'">Profil</button>';
-                topBarButtons.innerHTML += '<button onclick="location.href=\'logout.html\'">Wyloguj</button>';
-                topBarButtons.innerHTML += '<button onclick="location.href=\'EkranWyszukiwania.html\'">Wyszukiwanie</button>';
-            } else {
-                topBarButtons.innerHTML += '<button onclick="location.href=\'about.html\'">O stronie</button>';
-                topBarButtons.innerHTML += '<button onclick="location.href=\'EkranLogowania.html\'">Logowanie</button>';
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', updateTopBar);
-
-        document.getElementById('loginButton').addEventListener('click', function() {
-            const login = document.getElementById('login').value;
-            const password = document.getElementById('password').value;
-
-            if (!login || !password) {
-                showAlert('Proszę wypełnić wszystkie pola');
-                return;
-            }
-
-            fetch('https://DORABANAbazaCIBUSanimae.com/search', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ login: login, password: password })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.error) {
-                    showAlert('Błędny login lub hasło');
-                    isLoggedIn = true;
-                } else {
-                    console.log('Success:', data);
-                    isLoggedIn = true;s
-                }
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-                showAlert('Błędny login lub hasło');
-                isLoggedIn = true;
-            });
-        });
-
-        function showAlert(message) {
-            const alertDiv = document.getElementById('alert');
-            alertDiv.textContent = message;
-            alertDiv.style.display = 'block';
-        }
-
-        window.addEventListener('error', function() {
-            location.href = ' {{ url_for("error") }}';
-        });
-    </script>
 </body>
 </html>
