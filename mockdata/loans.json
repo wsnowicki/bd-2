@@ -1,0 +1,12 @@
+{
+  "loans": [
+    {
+    "loan_id":"1",
+    "book_id":"1",
+    "borrower_id":"1",
+    "loan_date":"02-02-2024",
+    "return_date":"03-03-2024",
+    "status":"2"
+   }
+  ]
+}

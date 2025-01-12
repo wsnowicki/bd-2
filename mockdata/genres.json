@@ -1,0 +1,21 @@
+{
+  "genres": [
+    {
+     "genre_id":"1",
+     "name":"Western" 
+    },
+    {
+     "genre_id":"2",
+     "name":"Edukacja" 
+    },
+    {
+     "genre_id":"3",
+     "name":"Epika" 
+    },
+    {
+     "genre_id":"4",
+     "name":"Dramat" 
+    }
+  
+  ]
+}

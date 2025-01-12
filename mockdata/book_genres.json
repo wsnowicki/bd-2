@@ -1,0 +1,14 @@
+{
+  "book_genres": [
+    {
+     "genre_id":"1",
+     "book_isbn":"1" 
+    },
+    {
+     "genre_id":"1",
+     "book_isbn":"2"
+    }
+    
+  
+  ]
+}
