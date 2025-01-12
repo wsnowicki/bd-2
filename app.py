@@ -40,11 +40,13 @@ def logout():
     return redirect(url_for('login'))
 
 @app.route('/search', methods=['GET', 'POST'])
-def search(nazwa,author):
+def search():
     if 'user' not in session:
         return redirect(url_for('login'))
 
     if request.method == 'POST':
+        nazwa = request.form['nazwa']
+        author = request.form['autor']
         nazwa_ksiazki = request.form.get('nazwaKsiazki', '')
         autor = request.form.get('autor', '')
 
@@ -77,6 +79,15 @@ def page_not_found(e):
 
 @app.route('/error')
 def error():
+    return 404
+
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/profile')
+def profile():
     return 404
 
 if __name__ == '__main__':

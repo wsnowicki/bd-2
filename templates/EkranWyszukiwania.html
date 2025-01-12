@@ -11,7 +11,7 @@
     <div class="top-bar">
         <img src="{{ url_for('static', filename='logo.png') }}" alt="Error Image" vertical-align: middle; width="auto">
         <div id="top-bar-buttons" style="margin-left: auto;">
-            {% if current_user.is_authenticated %}
+            {% if session['user'] %}
                 <button onclick="location.href='{{ url_for('profile') }}'">Profil</button>
                 <button onclick="location.href='{{ url_for('logout') }}'">Wyloguj</button>
                 <button onclick="location.href='{{ url_for('search') }}'">Wyszukiwanie</button>
@@ -28,10 +28,10 @@
             <h2>Wyszukaj</h2>
         </div>
         <div id="alert" class="alert" style="display: none;"></div>
-        <form action="{{ url_for('search_books') }}" method="post">
+        <form action="{{ url_for('search') }}" method="post">
             <div class="form-group">
-                <label for="nazwaKsiazki">Nazwa:</label>
-                <input type="text" id="nazwaKsiazki" name="nazwaKsiazki">
+                <label for="nazwa">Nazwa:</label>
+                <input type="text" id="nazwaKsiazki" name="nazwa">
             </div>
             <div class="form-group">
                 <label for="autor">Autor:</label>

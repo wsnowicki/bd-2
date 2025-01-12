@@ -11,7 +11,7 @@
     <div class="top-bar">
         <img src="{{ url_for('static', filename='logo.png') }}" alt="Error Image" style="vertical-align: middle; width: auto;">
         <div id="top-bar-buttons" style="margin-left: auto;">
-            {% if current_user.is_authenticated %}
+            {% if session['user'] %}
                 <button onclick="location.href='{{ url_for('profile') }}'">Profil</button>
                 <button onclick="location.href='{{ url_for('logout') }}'">Wyloguj</button>
                 <button onclick="location.href='{{ url_for('search') }}'">Wyszukiwanie</button>
@@ -28,7 +28,7 @@
             <h2>Logowanie</h2>
         </div>
         <div id="alert" class="alert" style="display: none;"></div>
-        <form action="{{ url_for('login_user') }}" method="post">
+        <form action="{{ url_for('login') }}" method="post">
             <div class="form-group">
                 <label for="login">Login:</label>
                 <input type="text" id="login" name="login">
@@ -58,7 +58,7 @@
             }
         }
 
-        document.addEventListener('DOMContentLoaded', updateTopBar);
+        // document.addEventListener('DOMContentLoaded', updateTopBar);
 
         document.getElementById('loginButton').addEventListener('click', function() {
             const login = document.getElementById('login').value;
@@ -103,6 +103,5 @@
             location.href = '{{ url_for("error") }}';
         });
     </script>
->>>>>>> 96174144d56dccea8e1dbb17a82028aa538db8d7
 </body>
 </html>
