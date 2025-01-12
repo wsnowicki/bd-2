@@ -65,21 +65,21 @@ def search():
             port=db_port
         )
         cursor = connection.cursor()
-        zap="SELECT books.title,books.is_available,books.year_published,books.isbn,authors.name FROM books INNER JOIN authors ON books.author_id = authors.author_id WHERE authors.name LIKE "
+        zap='SELECT books.title,books.is_available,books.year_published,books.isbn,authors.name FROM books INNER JOIN authors ON books.author_id = authors.author_id WHERE authors.name LIKE "'
         if '"' in str(author):
             pass
         elif "'" in str(author):
             pass
         else:
             zap+=str(author)
-        zap+="% AND books.title LIKE "
+        zap+='%" AND books.title LIKE "'
         if '"' in str(nazwa):
             pass
         elif "'" in str(author):
             pass
         else:       
             zap+=str(nazwa)
-        zap+="%;"
+        zap+='%";'
         odp=cursor.execute(zap)
         return jsonify(odp)
     return render_template('EkranWyszukiwania.html')
