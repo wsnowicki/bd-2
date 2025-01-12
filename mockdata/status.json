@@ -2,13 +2,18 @@
   "status": [
     {
      "id":"1",
-     "status":"avaible", 
-     "description":"this book is avaible"
+     "status":"dostępna", 
+     "description":"ta książka jest dostepna"
     },
     {
      "id":"2",
-     "status":"borrowed", 
-     "description":"this book is unavaible"
+     "status":"wypożyczona", 
+     "description":"ta ksiazka jest obecnie niedostepna"
+    },
+    {
+     "id":"3",
+     "status":"wycofana", 
+     "description":"ta książka jest wycofana"
     }
     
   

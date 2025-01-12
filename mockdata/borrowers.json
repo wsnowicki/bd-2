@@ -17,6 +17,49 @@
      "name":"Jan", 
      "email":"Stonemaster@gmail.com", 
      "phone":"334715612"
+    },
+    {
+     "borrower_id":"4",
+     "name":"Joanna", 
+     "email":"IlovetoStudy@gmail.com", 
+     "phone":"111333444"
+    },
+    {
+      "borrower_id":"5",
+     "name":"Wiktor", 
+     "email":"Burnigbook@gmail.com", 
+     "phone":"136832754"
+    },
+    {
+      "borrower_id":"6",
+     "name":"Michał", 
+     "email":"StoneHeart@gmail.com", 
+     "phone":"315333687"
+    },
+    {
+      "borrower_id":"7",
+     "name":"Kamil", 
+     "email":"Nicpon@gmail.com", 
+     "phone":"259835003"
+    },
+    {
+      "borrower_id":"8",
+     "name":"Leon", 
+     "email":"Datecher@gmail.com", 
+     "phone":"472368023"
+    },
+    {
+      "borrower_id":"9",
+     "name":"Dawid", 
+     "email":"YourFrend@gmail.com", 
+     "phone":"157092345"
+    },
+    {
+      "borrower_id":"10",
+     "name":"Hubert", 
+     "email":"Golf@gmail.com", 
+     "phone":"192837465"
     }
+    
   ]
 }

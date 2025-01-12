@@ -7,6 +7,30 @@
     {
      "genre_id":"1",
      "book_isbn":"2"
+    },
+    {
+     "genre_id":"3",
+     "book_isbn":"2"
+    },
+    {
+     "genre_id":"5",
+     "book_isbn":"6"
+    },
+    {
+     "genre_id":"3",
+     "book_isbn":"8"
+    },
+    {
+     "genre_id":"1",
+     "book_isbn":"7"
+    },
+    {
+     "genre_id":"2",
+     "book_isbn":"9"
+    },
+    {
+     "genre_id":"5",
+     "book_isbn":"2"
     }
     
   

@@ -7,6 +7,78 @@
     "year_published":"2020", 
     "is_available":"1", 
     "cover_image":"img"
-    }
+    },
+    {
+    "isbn":"1526423605831",
+    "title":"Wiatry Zimy", 
+    "author_id":"2",
+    "year_published":"2025", 
+    "is_available":"0", 
+    "cover_image":"img"
+    },
+    {
+    "isbn":"7474748572639",
+    "title":"Symfonia C++a", 
+    "author_id":"4",
+    "year_published":"2002", 
+    "is_available":"1", 
+    "cover_image":"img"
+    },
+    {
+    "isbn":"0194825618912",
+    "title":"Strategikon Mauryciusza", 
+    "author_id":"1",
+    "year_published":"0605", 
+    "is_available":"1", 
+    "cover_image":"img"
+    },
+    {
+    "isbn":"0293425392111",
+    "title":"Spóźnialska Asia 2", 
+    "author_id":"1",
+    "year_published":"2018", 
+    "is_available":"0", 
+    "cover_image":"img"
+    },
+    {
+    "isbn":"2838256270147",
+    "title":"Kursor wiedzy", 
+    "author_id":"1",
+    "year_published":"2021", 
+    "is_available":"1", 
+    "cover_image":"img"
+    },
+    {
+    "isbn":"0808138209091",
+    "title":"Jak zarobić 1 000 000 $ w dwa miesiące", 
+    "author_id":"3",
+    "year_published":"1999", 
+    "is_available":"1", 
+    "cover_image":"img"
+    },
+    {
+    "isbn":"9183747676757",
+    "title":"Historia Świata", 
+    "author_id":"2",
+    "year_published":"2024", 
+    "is_available":"1", 
+    "cover_image":"img"
+    },
+    {
+    "isbn":"0101010101333",
+    "title":"Wałbrzych, Perła Dolnego Ślaska", 
+    "author_id":"4",
+    "year_published":"2020", 
+    "is_available":"1", 
+    "cover_image":"img"
+    },
+    {
+    "isbn":"9243249129212",
+    "title":"Korea Północna Fakty i mity", 
+    "author_id":"2",
+    "year_published":"2023", 
+    "is_available":"1", 
+    "cover_image":"img"
+    },
   ]
 }
