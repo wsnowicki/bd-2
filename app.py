@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from dotenv import load_dotenv
 from os import getenv
+import psycopg2
 
 # Wczytanie zmiennych z pliku .env
 load_dotenv()
@@ -51,11 +52,11 @@ def search():
         autor = request.form.get('autor', '')
 
         # Tutaj wyszukiwanie
-        db_user = os.getenv("DB_USER")
-        db_password = os.getenv("DB_PASSWORD")
-        db_host = os.getenv("DB_HOST", "127.0.0.1")
-        db_port = os.getenv("DB_PORT", "5432")
-        db_name = os.getenv("DB_DATABASE", "biblioteka")
+        db_user = getenv("DB_USER")
+        db_password = getenv("DB_PASSWORD")
+        db_host = getenv("DB_HOST", "127.0.0.1")
+        db_port = getenv("DB_PORT", "5432")
+        db_name = getenv("DB_DATABASE", "biblioteka")
         connection = psycopg2.connect(
             dbname=db_name,
             user=db_user,
