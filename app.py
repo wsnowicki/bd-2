@@ -65,9 +65,19 @@ def search():
         )
         cursor = connection.cursor()
         zap="SELECT books.title,books.is_available,books.year_published,books.isbn,authors.name FROM books INNER JOIN authors ON books.author_id = authors.author_id WHERE authors.name LIKE "
-        zap+=str(author)
+        if '"' in str(author):
+            pass
+        elif "'" in str(author):
+            pass
+        else:
+            zap+=str(author)
         zap+="% AND books.title LIKE "
-        zap += str(nazwa)
+        if '"' in str(nazwa):
+            pass
+        elif "'" in str(author):
+            pass
+        else:       
+            zap+=str(nazwa)
         zap+="%;"
         odp=cursor.execute(zap)
         return jsonify(odp)
