@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cibus Animae N I</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    
+    <div class="top-bar">
+        <img src="{{ url_for('static', filename='cross.png') }}" alt="Error Icon">
+        <div id="top-bar-buttons" style="margin-left: auto;"></div>
+    </div>
+
+    <div class="container">
+        <img src="{{ url_for('static', filename='cross.png') }}" alt="Error Image" style="display: inline-block; vertical-align: middle;"  class="header-icon">
+        <h2 style="display: inline-block; vertical-align: middle;">Polityka Wzrostu</h2>
+        <div style="display: flex; justify-content: center; align-items: center; height: 20vh;">
+            <img src="{{ url_for('static', filename='error.png') }}" alt="Error Image" style="width: 30%; height: auto;">
+        </div>
+        <h3>Jeszcze Nie Zaimplementowane.</h3>
+    </div>
+
+    <script>
+        function updateTopBar() {
+            const isLoggedIn = false; // Change this based on actual login status
+            const topBarButtons = document.getElementById('top-bar-buttons');
+            topBarButtons.innerHTML = '';
+
+            if (isLoggedIn) {
+                topBarButtons.innerHTML += '<button onclick="location.href=\'profile.html\'">Profil</button>';
+                topBarButtons.innerHTML += '<button onclick="location.href=\'logout.html\'">Wyloguj</button>';
+                topBarButtons.innerHTML += '<button onclick="location.href=\'EkranWyszukiwania.html\'">Wyszukiwanie</button>';
+            } else {
+                topBarButtons.innerHTML += '<button onclick="location.href=\'about.html\'">O stronie</button>';
+                topBarButtons.innerHTML += '<button onclick="location.href=\'EkranLogowania.html\'">Logowanie</button>';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', updateTopBar);
+
+        window.addEventListener('error', function() {
+            location.href = "{{ url_for('error') }}";
+        });
+    </script>
+</body>
+</html>
