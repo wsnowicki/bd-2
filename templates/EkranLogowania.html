@@ -45,7 +45,7 @@
 
 
     <script>
-        function updateTopBar() {
+        function updateTopBar() { // niepotrzebne
             const isLoggedIn = false; 
             const topBarButtons = document.getElementById('top-bar-buttons');
             topBarButtons.innerHTML = '';
@@ -95,13 +95,13 @@
             });
         });
 
-        function showAlert(message) {
+        function showAlert(message) { // niepotrzbne
             const alertDiv = document.getElementById('alert');
             alertDiv.textContent = message;
             alertDiv.style.display = 'block';
         }
 
-        window.addEventListener('error', function() {
+        window.addEventListener('error', function() { // niepotrzebne
             location.href = '{{ url_for("error") }}';
         });
     </script>

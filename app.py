@@ -81,7 +81,11 @@ def search():
             zap+=str(nazwa)
         zap+="%';"
         odp=cursor.execute(zap)
-        return render_template('listaszukanych.html', books=odp)
+        if odp is not None:
+            total_pagess = len(odp)//10 + bool(len(odp) % 10)
+        else:
+            total_pagess = 0
+        return render_template('listaszukanych.html', books=odp, total_pages=total_pagess)
     return render_template('EkranWyszukiwania.html')
 
 @app.errorhandler(404)
