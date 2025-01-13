@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session, jsonify
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify, abort
 from dotenv import load_dotenv
 from os import getenv
 import psycopg2
@@ -81,7 +81,7 @@ def search():
             zap+=str(nazwa)
         zap+="%';"
         odp=cursor.execute(zap)
-        return jsonify(odp)
+        return render_template('listaszukanych.html', books=odp)
     return render_template('EkranWyszukiwania.html')
 
 @app.errorhandler(404)
@@ -90,8 +90,7 @@ def page_not_found(e):
 
 @app.route('/error')
 def error():
-    return 404
-
+    abort(404)
 
 @app.route('/about')
 def about():
@@ -99,7 +98,7 @@ def about():
 
 @app.route('/profile')
 def profile():
-    return 404
+    abort(404)
 
 if __name__ == '__main__':
     app.run(debug=True, host=http_host, port=http_port)
