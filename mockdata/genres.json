@@ -1,41 +1,84 @@
 {
   "genres": [
     {
-     "genre_id":"1",
-     "name":"Western" 
+      "genre_id": "1",
+      "name": "Western"
     },
     {
-     "genre_id":"2",
-     "name":"Edukacja" 
+      "genre_id": "2",
+      "name": "Edukacja"
     },
     {
-     "genre_id":"3",
-     "name":"Epika" 
+      "genre_id": "3",
+      "name": "Epika"
     },
     {
-     "genre_id":"4",
-     "name":"Dramat" 
+      "genre_id": "4",
+      "name": "Dramat"
     },
-      {
-     "genre_id":"5",
-     "name":"Powieść" 
+    {
+      "genre_id": "5",
+      "name": "Powieść"
     },
-      {
-     "genre_id":"6",
-     "name":"Literatura Piękna" 
+    {
+      "genre_id": "6",
+      "name": "Literatura Piękna"
     },
-      {
-     "genre_id":"7",
-     "name":"Podręcznik" 
+    {
+      "genre_id": "7",
+      "name": "Podręcznik"
     },
-      {
-     "genre_id":"8",
-     "name":"Komiks" 
+    {
+      "genre_id": "8",
+      "name": "Komiks"
     },
-      {
-     "genre_id":"9",
-     "name":"Turystyka" 
+    {
+      "genre_id": "9",
+      "name": "Turystyka"
     },
-  
+    {
+      "genre_id": "10",
+      "name": "Fantastyka"
+    },
+    {
+      "genre_id": "11",
+      "name": "Horror"
+    },
+    {
+      "genre_id": "12",
+      "name": "Romans"
+    },
+    {
+      "genre_id": "13",
+      "name": "Biografia"
+    },
+    {
+      "genre_id": "14",
+      "name": "Kryminał"
+    },
+    {
+      "genre_id": "15",
+      "name": "Thriller"
+    },
+    {
+      "genre_id": "16",
+      "name": "Sci-Fi"
+    },
+    {
+      "genre_id": "17",
+      "name": "Poezja"
+    },
+    {
+      "genre_id": "18",
+      "name": "Psychologia"
+    },
+    {
+      "genre_id": "19",
+      "name": "Reportaż"
+    },
+    {
+      "genre_id": "20",
+      "name": "Literatura Dziecięca"
+    }
   ]
 }
