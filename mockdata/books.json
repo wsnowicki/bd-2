@@ -80,5 +80,883 @@
     "is_available":"1", 
     "cover_image":"img"
     },
+
+    {
+      "isbn": "5602348751234",
+      "title": "Programowanie na poważnie",
+      "author_id": "2",
+      "year_published": "2018",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "7320482314678",
+      "title": "Kosmos - nasz dom",
+      "author_id": "3",
+      "year_published": "2020",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "4509823476541",
+      "title": "UML od podstaw",
+      "author_id": "4",
+      "year_published": "2023",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "6789012345123",
+      "title": "Tajemnice historii",
+      "author_id": "5",
+      "year_published": "2019",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "5678390245893",
+      "title": "Matematyka dla każdego",
+      "author_id": "6",
+      "year_published": "2017",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "8903412568901",
+      "title": "Podręcznik podróżnika",
+      "author_id": "7",
+      "year_published": "2022",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "2348901273645",
+      "title": "Wprowadzenie do informatyki",
+      "author_id": "8",
+      "year_published": "2016",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "9012873645298",
+      "title": "Filozofia i życie Michała",
+      "author_id": "9",
+      "year_published": "2021",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "4987203456129",
+      "title": "Przygody w świecie literatury pięknej",
+      "author_id": "10",
+      "year_published": "2020",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "8753984751023",
+      "title": "Podróż w czasie",
+      "author_id": "11",
+      "year_published": "2015",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "7894523105698",
+      "title": "Poradnik survivalowy",
+      "author_id": "12",
+      "year_published": "2012",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "4987612034578",
+      "title": "Gotowanie z pasją",
+      "author_id": "13",
+      "year_published": "2017",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "5987612034578",
+      "title": "Rytmy natury",
+      "author_id": "14",
+      "year_published": "2020",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "9128374651023",
+      "title": "Klasyczna literatura w nowoczesnym ujęciu",
+      "author_id": "15",
+      "year_published": "2023",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "6512389401276",
+      "title": "Nowoczesne technologie Wiktoriana",
+      "author_id": "16",
+      "year_published": "2018",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "3210987654321",
+      "title": "Ekspedycje polarne Misia polarnego",
+      "author_id": "17",
+      "year_published": "2019",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "1234567890123",
+      "title": "Historia medycyny",
+      "author_id": "18",
+      "year_published": "2021",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "4567891234567",
+      "title": "Tajemnice podwodnych światów",
+      "author_id": "19",
+      "year_published": "2020",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "7891234567890",
+      "title": "Mitologia współczesna",
+      "author_id": "20",
+      "year_published": "2022",
+      "is_available": "0",
+      "cover_image": "img"
+    }{
+      "isbn": "2384567890123",
+      "title": "Świat nauki",
+      "author_id": "21",
+      "year_published": "2019",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "3485678901234",
+      "title": "Podstawy rysunku",
+      "author_id": "22",
+      "year_published": "2010",
+      "is_available": "1",
+      "cover_image": "img"
+    }, "isbn": "7894523105698",
+      "title": "Poradnik survivalowy",
+      "author_id": "12",
+      "year_published": "2018",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "1234567890123",
+      "title": "Podstawy programowania",
+      "author_id": "13",
+      "year_published": "2017",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "2345678901234",
+      "title": "Matematyka to sens życia",
+      "author_id": "14",
+      "year_published": "2019",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "3456789012345",
+      "title": "Podróże wielkiego Wika",
+      "author_id": "15",
+      "year_published": "2021",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "4567890123456",
+      "title": "Tajemnice kosmosu",
+      "author_id": "16",
+      "year_published": "2020",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "5678901234567",
+      "title": "Przygody Sherlocka clocka",
+      "author_id": "17",
+      "year_published": "2018",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "6789012345678",
+      "title": "Podstawy fizyki nuklearnej",
+      "author_id": "18",
+      "year_published": "2016",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "7890123456789",
+      "title": "Jak zrazić do siebie ludzi i mieć spokój",
+      "author_id": "19",
+      "year_published": "2022",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "8901234567890",
+      "title": "Wycieczka po miłość",
+      "author_id": "20",
+      "year_published": "2015",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "9012345678901",
+      "title": "to właśnie chemia",
+      "author_id": "21",
+      "year_published": "2017",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "0123456789012",
+      "title": "Gdzie lasy szumią",
+      "author_id": "22",
+      "year_published": "2019",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "1234567890124",
+      "title": "Psychologia człowieczeństwa",
+      "author_id": "23",
+      "year_published": "2021",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "2345678901235",
+      "title": "Podstawy ekonomii",
+      "author_id": "24",
+      "year_published": "2020",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "3456789012346",
+      "title": "Psychologia dla każdego",
+      "author_id": "25",
+      "year_published": "2018",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "4567890123457",
+      "title": "Wiersze filozoficzne",
+      "author_id": "26",
+      "year_published": "2017",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "5678901234568",
+      "title": "Filozofia dla kadego",
+      "author_id": "27",
+      "year_published": "2019",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "6789012345679",
+      "title": "Podręcznik logiki",
+      "author_id": "28",
+      "year_published": "2021",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "7890123456790",
+      "title": "Podstawy astronomii",
+      "author_id": "29",
+      "year_published": "2020",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "8901234567901",
+      "title": "Podręcznik historii",
+      "author_id": "30",
+      "year_published": "2018",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "9012345679012",
+      "title": "Podstawy geografii",
+      "author_id": "31",
+      "year_published": "2017",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "0123456789123",
+      "title": "Historia nauki",
+      "author_id": "32",
+      "year_published": "2019",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "1234567890234",
+      "title": "Podstawy inżynierii",
+      "author_id": "33",
+      "year_published": "2021",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "2345678901345",
+      "title": "Podręcznik medycyny",
+      "author_id": "34",
+      "year_published": "2020",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "3456789012456",
+      "title": "Podstawy prawa",
+      "author_id": "35",
+      "year_published": "2018",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "4567890123567",
+      "title": "Historia polityki",
+      "author_id": "36",
+      "year_published": "2017",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "5678901234678",
+      "title": "Podręcznik ekonomii",
+      "author_id": "37",
+      "year_published": "2019",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "6789012345789",
+      "title": "Lili w wielkim mieście",
+      "author_id": "38",
+      "year_published": "2021",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "7890123456890",
+      "title": "Morderczy bieg",
+      "author_id": "39",
+      "year_published": "2020",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "8901234567902",
+      "title": "Historia filozofii",
+      "author_id": "40",
+      "year_published": "2018",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "9012345679013",
+      "title": "Sztuka odpuszczania",
+      "author_id": "41",
+      "year_published": "2017",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "0123456789124",
+      "title": "Moli i cztery szczeniaki",
+      "author_id": "42",
+      "year_published": "2019",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "1234567890235",
+      "title": "Matylda i jej supermoce",
+      "author_id": "43",
+      "year_published": "2021",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "2345678901346",
+      "title": "Zakon Feniksa i trzej więźniowie",
+      "author_id": "44",
+      "year_published": "2020",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+        {
+      "isbn": "7894523105698",
+      "title": "Poradnik survivalowy jak przetrwać studia",
+      "author_id": "12",
+      "year_published": "2018",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "1234567890123",
+      "title": "Podstawy programowania",
+      "author_id": "13",
+      "year_published": "2017",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "2345678901234",
+      "title": "Jak nauka zmienia życie",
+      "author_id": "14",
+      "year_published": "2019",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "3456789012345",
+      "title": "Anna i nieziemskie podróże",
+      "author_id": "15",
+      "year_published": "2021",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "4567890123456",
+      "title": "Tajemnice kosmosu",
+      "author_id": "16",
+      "year_published": "2020",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "5678901234567",
+      "title": "Przygody Młodego Waltera White",
+      "author_id": "17",
+      "year_published": "2018",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "6789012345678",
+      "title": "Malediwy są cudne",
+      "author_id": "18",
+      "year_published": "2016",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "7890123456789",
+      "title": "Nienawiść i inne złe emocje",
+      "author_id": "19",
+      "year_published": "2022",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "8901234567890",
+      "title": "Jak powstało życie",
+      "author_id": "20",
+      "year_published": "2015",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "9012345678901",
+      "title": "Niebezpieczne manewry",
+      "author_id": "21",
+      "year_published": "2017",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "0123456789012",
+      "title": "Kameinne serce",
+      "author_id": "22",
+      "year_published": "2019",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "1234567890124",
+      "title": "Granitowe miasto",
+      "author_id": "23",
+      "year_published": "2021",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "2345678901235",
+      "title": "I węgiel Ci nie pomoże",
+      "author_id": "24",
+      "year_published": "2020",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "3456789012346",
+      "title": "Wilkołaki i inne kudłate stwory",
+      "author_id": "25",
+      "year_published": "2018",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "4567890123457",
+      "title": "smerfetka i jej kompania smerfów",
+      "author_id": "26",
+      "year_published": "2017",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "5678901234568",
+      "title": "",
+      "author_id": "27",
+      "year_published": "2019",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "6789012345679",
+      "title": "Logika daltona",
+      "author_id": "28",
+      "year_published": "2021",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "7890123456790",
+      "title": "Podstawy astronomii",
+      "author_id": "29",
+      "year_published": "2020",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "8901234567901",
+      "title": "Marionetka",
+      "author_id": "30",
+      "year_published": "2018",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "9012345679012",
+      "title": "Owczarki i inne psy",
+      "author_id": "31",
+      "year_published": "2017",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "0123456789123",
+      "title": "Aniela sama w domu",
+      "author_id": "32",
+      "year_published": "2019",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "1234567890234",
+      "title": "Podstawy inżynierii",
+      "author_id": "33",
+      "year_published": "2021",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "2345678901345",
+      "title": "Podręcznik medycyny",
+      "author_id": "34",
+      "year_published": "2020",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "3456789012456",
+      "title": "Podstawy prawa",
+      "author_id": "35",
+      "year_published": "2018",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "4567890123567",
+      "title": "Historia polityki",
+      "author_id": "36",
+      "year_published": "2017",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "5678901234678",
+      "title": "Podręcznik ekonomii",
+      "author_id": "37",
+      "year_published": "2019",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "6789012345789",
+      "title": "Podstawy psychologii",
+      "author_id": "38",
+      "year_published": "2021",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "7890123456890",
+      "title": "Podręcznik socjologii",
+      "author_id": "39",
+      "year_published": "2020",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "8901234567902",
+      "title": "Historia filozofii",
+      "author_id": "40",
+      "year_published": "2018",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "9012345679013",
+      "title": "Podstawy logiki",
+      "author_id": "41",
+      "year_published": "2017",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "0123456789124",
+      "title": "Podręcznik astronomii",
+      "author_id": "42",
+      "year_published": "2019",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "1234567890235",
+      "title": "Podstawy historii",
+      "author_id": "43",
+      "year_published": "2021",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "2345678901346",
+      "title": "Podręcznik geografii",
+      "author_id": "44",
+      "year_published": "2020",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+  {
+      "isbn": "6789012345811",
+      "title": "Podstawy literatury",
+      "author_id": "78",
+      "year_published": "2021",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "7890123456922",
+      "title": "Historia matematyki",
+      "author_id": "79",
+      "year_published": "2020",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "8901234567933",
+      "title": "Podręcznik fizyki",
+      "author_id": "80",
+      "year_published": "2018",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "9012345679044",
+      "title": "Podstawy chemii",
+      "author_id": "81",
+      "year_published": "2017",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "0123456789155",
+      "title": "Podręcznik biologii",
+      "author_id": "82",
+      "year_published": "2019",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "1234567890266",
+      "title": "Historia sztuki",
+      "author_id": "83",
+      "year_published": "2021",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "2345678901377",
+      "title": "Podstawy astronomii",
+      "author_id": "84",
+      "year_published": "2020",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "3456789012488",
+      "title": "Podręcznik geografii",
+      "author_id": "85",
+      "year_published": "2018",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "4567890123599",
+      "title": "Podstawy historii",
+      "author_id": "86",
+      "year_published": "2017",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "5678901234710",
+      "title": "Podręcznik literatury",
+      "author_id": "87",
+      "year_published": "2019",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "6789012345821",
+      "title": "Historia nauki",
+      "author_id": "88",
+      "year_published": "2021",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "7890123456932",
+      "title": "Podstawy inżynierii",
+      "author_id": "89",
+      "year_published": "2020",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "8901234567943",
+      "title": "Podręcznik medycyny",
+      "author_id": "90",
+      "year_published": "2018",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "9012345679054",
+      "title": "Podstawy prawa",
+      "author_id": "91",
+      "year_published": "2017",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "0123456789165",
+      "title": "Historia polityki",
+      "author_id": "92",
+      "year_published": "2019",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "1234567890276",
+      "title": "Podręcznik ekonomii",
+      "author_id": "93",
+      "year_published": "2021",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "2345678901387",
+      "title": "Podstawy psychologii",
+      "author_id": "94",
+      "year_published": "2020",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "3456789012498",
+      "title": "Podręcznik socjologii",
+      "author_id": "95",
+      "year_published": "2018",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "4567890123609",
+      "title": "Historia filozofii",
+      "author_id": "96",
+      "year_published": "2017",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "5678901234720",
+      "title": "Podstawy logiki",
+      "author_id": "97",
+      "year_published": "2019",
+      "is_available": "0",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "6789012345831",
+      "title": "Podręcznik astronomię trzeba odkryć",
+      "author_id": "98",
+      "year_published": "2021",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "7890123456942",
+      "title": "Podstawy historii sztuki",
+      "author_id": "99",
+      "year_published": "2020",
+      "is_available": "1",
+      "cover_image": "img"
+    },
+    {
+      "isbn": "8901234567953",
+      "title": "Podręcznik geografia jest piękna",
+      "author_id": "100",
+      "year_published": "2018",
+      "is_available": "0",
+      "cover_image": "img"
+    }
   ]
 }
