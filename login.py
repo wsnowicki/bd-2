@@ -18,11 +18,23 @@ import bcrypt
 from dotenv import load_dotenv
 from os import getenv
 import psycopg2
-users_db = {}
+from enum import Enum, auto
+
+
 load_dotenv()
+
 http_host = getenv("HTTP_HOST")
 http_port = getenv("HTTP_PORT")
 http_threads = getenv("HTTP_THREADS")
+
+
+class Status(Enum):
+    OK = auto()
+    USER_EXISTS = auto()
+    PASSWORD_TOO_LONG = auto()
+    WRONG_LOGIN = auto()
+
+
 def encrypt_password(password):
     """Funkcja do szyfrowania hasła."""
     salt = bcrypt.gensalt()
@@ -34,38 +46,47 @@ def verify_password(password, hashed):
     return bcrypt.checkpw(password.encode('utf-8'), hashed)
 
 def register_user(username, password):
+    """Funkcja rejestrująca użytkownika."""
+
     email='testowy@gmail'
     telephone='111333222'
-    """Funkcja rejestrująca użytkownika."""
+
     db_user = getenv("DB_USER")
     db_password = getenv("DB_PASSWORD")
     db_host = getenv("DB_HOST", "127.0.0.1")
     db_port = getenv("DB_PORT", "5432")
     db_name = getenv("DB_DATABASE", "biblioteka")
     connection = psycopg2.connect(
-            dbname=db_name,
-            user=db_user,
-            password=db_password,
-            host=db_host,
-            port=db_port
-        )
-    # Tutaj będzie zapytanie do bazy danych.
+        dbname=db_name,
+        user=db_user,
+        password=db_password,
+        host=db_host,
+        port=db_port
+    )
     cursor = connection.cursor()
-    zap = "SELECT COUNT(1) FROM borrowers WHERE name ='"+str(username)
-    zap+="';"
+    
+    zap = f"SELECT COUNT(1) FROM borrowers WHERE name ='{str(username)}';"
     czyjuzjest = cursor.execute(zap)
     if czyjuzjest is True:
-        return "Użytkownik już istnieje."
+        return Status.USER_EXISTS
     if password > 20:
-        return "Prosze Podaj krótsze hasło"
+        return Status.PASSWORD_TOO_LONG
+    
     hashed_password = hash_password(password)
-    zap = "INSERT INTO borrowers (borrower_id, name, email, phone,password) VALUES (,'"+str(username)+"','"+str(email)+"','"+str(telephone)+"','"+str(hashed_password)+"');"
+    # zap = "INSERT INTO borrowers (borrower_id, name, email, phone,password) VALUES (,'"+str(username)+"','"+str(email)+"','"+str(telephone)+"','"+str(hashed_password)+"');"
+    zap = f"""
+    INSERT INTO borrowers (borrower_id, name, email, phone, password) 
+    VALUES (NULL, '{username}', '{email}', '{telephone}', '{hashed_password}');
+    """
     cursor.execute(zap)
-    users_db[username] = hashed_password
-    return "Rejestracja zakończona sukcesem!"
+
+    return Status.OK
 
 def login_user(username, password):
     """Funkcja logowania użytkownika."""
+
+    if password > 20:
+        return Status.PASSWORD_TOO_LONG
 
     # Tutaj będzie zapytanie do bazy danych. Można odrazu dać selecta i jeśli będzie pusty to zwrócić informację zły login lub hasło.
     db_user = getenv("DB_USER")
@@ -74,30 +95,28 @@ def login_user(username, password):
     db_port = getenv("DB_PORT", "5432")
     db_name = getenv("DB_DATABASE", "biblioteka")
     connection = psycopg2.connect(
-            dbname=db_name,
-            user=db_user,
-            password=db_password,
-            host=db_host,
-            port=db_port
-        )
-    # Tutaj będzie zapytanie do bazy danych.
+        dbname=db_name,
+        user=db_user,
+        password=db_password,
+        host=db_host,
+        port=db_port
+    )
     cursor = connection.cursor()
-        # Połączenie z nowo utworzoną bazą danych
-    if password > 20:
-    	return "Podano Złe Hasło"
-    #if username not in users_db:
-    zap = "SELECT COUNT(1) FROM borrowers WHERE name ='"+str(username)
-    zap+="';"
+
+    zap = f"SELECT password FROM borrowers WHERE name ='{str(username)}';"
     odp = cursor.execute(zap)
-    if odp == 0:
-        return "Zły login"
-    zap = "SELECT password FROM borrowers WHERE name ='"+str(username)
-    zap+="';"
-    hashed_password = cursor.execute(zap)
+    hashed_password = odp.fetchone()
+    if hashed_password is None:
+        return Status.WRONG_LOGIN
+
     if verify_password(password, hashed_password):
-        return "Logowanie zakończone sukcesem!"
+        return Status.OK
     else:
-        return "Zły login lub hasło."
+        return Status.WRONG_LOGIN
+
+
+
+
 
 if __name__ == "__main__":
     while True:
