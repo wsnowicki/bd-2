@@ -43,7 +43,7 @@ python -m pip install flask python-dotenv psycopg2-binary bcrypt
 ```bash
 cp .env.example .env
 ```
-- Utworzenie pliku z konfiguracją środowiskową. Użytkownik może edytować ten plik, aby dostosować ustawienia, takie jak dane do bazy danych.
+- Utworzenie pliku z konfiguracją środowiskową. Użytkownik może edytować ten plik, aby dostosować ustawienia, takie jak dane logowania do bazy danych.
 
 ---
 
