@@ -45,25 +45,25 @@ def verify_password(password, hashed):
     """Funkcja do weryfikacji hasła."""
     return bcrypt.checkpw(password.encode('utf-8'), hashed)
 
-def register_user(username, password):
+def register_user(conn, username, password):
     """Funkcja rejestrująca użytkownika."""
 
     email='testowy@gmail'
     telephone='111333222'
 
-    db_user = getenv("DB_USER")
-    db_password = getenv("DB_PASSWORD")
-    db_host = getenv("DB_HOST", "127.0.0.1")
-    db_port = getenv("DB_PORT", "5432")
-    db_name = getenv("DB_DATABASE", "biblioteka")
-    connection = psycopg2.connect(
-        dbname=db_name,
-        user=db_user,
-        password=db_password,
-        host=db_host,
-        port=db_port
-    )
-    cursor = connection.cursor()
+    # db_user = getenv("DB_USER")
+    # db_password = getenv("DB_PASSWORD")
+    # db_host = getenv("DB_HOST", "127.0.0.1")
+    # db_port = getenv("DB_PORT", "5432")
+    # db_name = getenv("DB_DATABASE", "biblioteka")
+    # conn = psycopg2.connect(
+    #     dbname=db_name,
+    #     user=db_user,
+    #     password=db_password,
+    #     host=db_host,
+    #     port=db_port
+    # )
+    cursor = conn.cursor()
     
     zap = f"SELECT COUNT(1) FROM borrowers WHERE name ='{str(username)}';"
     czyjuzjest = cursor.execute(zap)
@@ -82,26 +82,25 @@ def register_user(username, password):
 
     return Status.OK
 
-def login_user(username, password):
+def login_user(conn, username, password):
     """Funkcja logowania użytkownika."""
 
     if password > 20:
         return Status.PASSWORD_TOO_LONG
 
-    # Tutaj będzie zapytanie do bazy danych. Można odrazu dać selecta i jeśli będzie pusty to zwrócić informację zły login lub hasło.
-    db_user = getenv("DB_USER")
-    db_password = getenv("DB_PASSWORD")
-    db_host = getenv("DB_HOST", "127.0.0.1")
-    db_port = getenv("DB_PORT", "5432")
-    db_name = getenv("DB_DATABASE", "biblioteka")
-    connection = psycopg2.connect(
-        dbname=db_name,
-        user=db_user,
-        password=db_password,
-        host=db_host,
-        port=db_port
-    )
-    cursor = connection.cursor()
+    # db_user = getenv("DB_USER")
+    # db_password = getenv("DB_PASSWORD")
+    # db_host = getenv("DB_HOST", "127.0.0.1")
+    # db_port = getenv("DB_PORT", "5432")
+    # db_name = getenv("DB_DATABASE", "biblioteka")
+    # conn = psycopg2.connect(
+    #     dbname=db_name,
+    #     user=db_user,
+    #     password=db_password,
+    #     host=db_host,
+    #     port=db_port
+    # )
+    cursor = conn.cursor()
 
     zap = f"SELECT password FROM borrowers WHERE name ='{str(username)}';"
     odp = cursor.execute(zap)
