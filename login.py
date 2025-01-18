@@ -45,7 +45,7 @@ def verify_password(password, hashed):
     """Funkcja do weryfikacji hasła."""
     return bcrypt.checkpw(password.encode('utf-8'), hashed)
 
-def register_user(conn, username, password):
+def register_user(conn, username: str, password: str):
     """Funkcja rejestrująca użytkownika."""
 
     email='testowy@gmail'
@@ -65,7 +65,7 @@ def register_user(conn, username, password):
     # )
     cursor = conn.cursor()
     
-    zap = f"SELECT COUNT(1) FROM borrowers WHERE name ='{str(username)}';"
+    zap = f"SELECT COUNT(1) FROM borrowers WHERE name ='{username}';"
     czyjuzjest = cursor.execute(zap)
     if czyjuzjest is True:
         return Status.USER_EXISTS
@@ -73,7 +73,7 @@ def register_user(conn, username, password):
         return Status.PASSWORD_TOO_LONG
     
     hashed_password = hash_password(password)
-    # zap = "INSERT INTO borrowers (borrower_id, name, email, phone,password) VALUES (,'"+str(username)+"','"+str(email)+"','"+str(telephone)+"','"+str(hashed_password)+"');"
+    # zap = "INSERT INTO borrowers (borrower_id, name, email, phone,password) VALUES (,'"+username+"','"+email+"','"+telephone+"','"+hashed_password+"');"
     zap = f"""
     INSERT INTO borrowers (borrower_id, name, email, phone, password) 
     VALUES (NULL, '{username}', '{email}', '{telephone}', '{hashed_password}');
@@ -88,21 +88,9 @@ def login_user(conn, username, password):
     if password > 20:
         return Status.PASSWORD_TOO_LONG
 
-    # db_user = getenv("DB_USER")
-    # db_password = getenv("DB_PASSWORD")
-    # db_host = getenv("DB_HOST", "127.0.0.1")
-    # db_port = getenv("DB_PORT", "5432")
-    # db_name = getenv("DB_DATABASE", "biblioteka")
-    # conn = psycopg2.connect(
-    #     dbname=db_name,
-    #     user=db_user,
-    #     password=db_password,
-    #     host=db_host,
-    #     port=db_port
-    # )
     cursor = conn.cursor()
 
-    zap = f"SELECT password FROM borrowers WHERE name ='{str(username)}';"
+    zap = f"SELECT password FROM borrowers WHERE name ='{username}';"
     odp = cursor.execute(zap)
     hashed_password = odp.fetchone()
     if hashed_password is None:
