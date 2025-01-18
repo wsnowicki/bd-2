@@ -62,7 +62,8 @@ def create_tables():
                 borrower_id SERIAL PRIMARY KEY,
                 name VARCHAR(255) NOT NULL,
                 email VARCHAR(255),
-                phone VARCHAR(15)
+                phone VARCHAR(15),
+                password CHAR(60)
             );
 
             CREATE TABLE status (

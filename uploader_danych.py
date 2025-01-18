@@ -19,7 +19,6 @@ def insert_values_into_db():
             password=db_password,
             host=db_host,
             port=db_port)
->>>>>>> 72497a637b78c4b4327a4c9e3ffa46415d3d7c07
         cursor = connection.cursor()
         f = open('mockdata/borrowers.json')
         data = json.load(f)
