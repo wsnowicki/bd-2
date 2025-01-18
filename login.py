@@ -53,8 +53,25 @@ def login_user(username, password):
         return "Zły login lub hasło."
 
 if __name__ == "__main__":
-    # Test szyfrowania hasła
-    password = "tajnehaslo"
-    hashed = encrypt_password(password)
-    print(hashed)
-    print(verify_password(password, hashed[:-2]))
+    while True:
+        print("\n--- System logowania ---")
+        print("1. Rejestracja")
+        print("2. Logowanie")
+        print("3. Wyjście")
+        
+        choice = input("Wybierz opcję: ")
+        
+        match choice:
+            case "1":
+                username = input("Podaj nazwę użytkownika: ")
+                password = input("Podaj hasło: ")
+                print(register_user(username, password))
+            case "2":
+                username = input("Podaj nazwę użytkownika: ")
+                password = input("Podaj hasło: ")
+                print(login_user(username, password))
+            case "3":
+                print("Do widzenia!")
+                break
+            case _:
+                print("Nieprawidłowa opcja, spróbuj ponownie.")
