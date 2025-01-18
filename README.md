@@ -49,14 +49,14 @@ cp .env.example .env
 
 ### 5. Tworzenie użytkownika bazy danych PostgreSQL
 ```bash
-sudo -u postgres psql -a -c "CREATE USER ubiblioteka WITH PASSWORD '123454321';"
+sudo -u postgres psql -c "CREATE USER ubiblioteka WITH PASSWORD '123454321';"
 ```
 
 ---
 
 ### 6. Tworzenie bazy danych PostgreSQL
 ```bash
-sudo -u postgres psql -a -c "CREATE DATABASE biblioteka WITH OWNER ubiblioteka;"
+sudo -u postgres psql -c "CREATE DATABASE biblioteka WITH OWNER ubiblioteka;"
 ```
 
 ---
