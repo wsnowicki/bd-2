@@ -34,6 +34,8 @@ def verify_password(password, hashed):
     return bcrypt.checkpw(password.encode('utf-8'), hashed)
 
 def register_user(username, password):
+    email='testowy@gmail'
+    telephone='111333222'
     """Funkcja rejestrująca użytkownika."""
     db_user = getenv("DB_USER")
     db_password = getenv("DB_PASSWORD")
@@ -57,7 +59,7 @@ def register_user(username, password):
     if password > 20:
         return "Prosze Podaj krótsze hasło"
     hashed_password = hash_password(password)
-    zap = "INSERT INTO borrowers (borrower_id, name, email, phone,password) VALUES (,'"+str(username)+"','email','992218337','"+str(hashed_password)+"');"
+    zap = "INSERT INTO borrowers (borrower_id, name, email, phone,password) VALUES (,'"+str(username)+"','"+str(email)+"','"+str(telephone)+"','"+str(hashed_password)+"');"
     cursor.execute(zap)
     users_db[username] = hashed_password
     return "Rejestracja zakończona sukcesem!"
