@@ -68,19 +68,16 @@ def register_user(conn, username: str, password: str, email: str,telephone: str)
 def login_user(conn, username, password):
     """Funkcja logowania użytkownika."""
     cursor = conn.cursor()
-    
-    # Debug
-    zap = cursor.execute("SELECT * FROM borrowers;")
-    print(zap)
 
     zap = f"SELECT password FROM borrowers WHERE name ='{username}';"
-    odp = cursor.execute(zap)
+    cursor.execute(zap)
+    hashed_password = cursor.fetchone()
+    if hashed_password is None: return Status.WRONG_LOGIN
 
-    print(odp)
-    if odp is None: return Status.WRONG_LOGIN
+    if isinstance((hashed_password := hashed_password[0]), str):
+        hashed_password = hashed_password.encode('utf-8')
 
-    hashed_password = odp.fetchone()
-    
+
     if hashed_password is None:
         return Status.WRONG_LOGIN
 
