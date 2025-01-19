@@ -48,18 +48,13 @@ def verify_password(password, hashed):
 
 def register_user(conn, username: str, password: str, email: str,telephone: str):
     """Funkcja rejestrująca użytkownika."""
-
-    
-
     cursor = conn.cursor()
-    
+
     zap = f"SELECT COUNT(1) FROM borrowers WHERE name ='{username}';"
     czyjuzjest = cursor.execute(zap)
     if czyjuzjest is True:
         return Status.USER_EXISTS
-    if password > 20:
-        return Status.PASSWORD_TOO_LONG
-    
+
     hashed_password = hash_password(password)
     # zap = "INSERT INTO borrowers (borrower_id, name, email, phone,password) VALUES (,'"+username+"','"+email+"','"+telephone+"','"+hashed_password+"');"
     zap = f"""
@@ -72,16 +67,17 @@ def register_user(conn, username: str, password: str, email: str,telephone: str)
 
 def login_user(conn, username, password):
     """Funkcja logowania użytkownika."""
-
-    if password > 20:
-        return Status.PASSWORD_TOO_LONG
-
     cursor = conn.cursor()
 
     zap = f"SELECT password FROM borrowers WHERE name ='{username}';"
-    odp = cursor.execute(zap)
-    hashed_password = odp.fetchone()
-    
+    cursor.execute(zap)
+    hashed_password = cursor.fetchone()
+    if hashed_password is None: return Status.WRONG_LOGIN
+
+    if isinstance((hashed_password := hashed_password[0]), str):
+        hashed_password = hashed_password.encode('utf-8')
+
+
     if hashed_password is None:
         return Status.WRONG_LOGIN
 
