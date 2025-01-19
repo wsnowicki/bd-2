@@ -79,8 +79,8 @@ def rejestracja():
 
         login = request.form['login']
         password = request.form['password']
-        email =request.form['email']
         tel = request.form['tel']
+        email = request.form['email']
         if (register_status := register_user(connection, login, password,email,tel)) == Status.OK:
             session['user'] = login
             return redirect(url_for('search'))

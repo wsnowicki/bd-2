@@ -29,10 +29,10 @@
             {% if books %}
             {% for book in books %}
                 <div class="book-item">
-                    <img src="{{ book.picture }}" alt="Book Image" class="book-image">
+                    <img src="{{ book[5] }}" alt="Book Image" class="book-image">
                     <div class="book-details">
-                        <h3>{{ book.name }}</h3>
-                        <p>{{ book.author }}</p>
+                        <h3>{{ book[0] }}</h3>
+                        <p>{{ book[4] }}</p>
                         <button onclick="location.href='{{ url_for('order_book', book_id=book.id) }}'">Zamów</button>
                         <button onclick="location.href='{{ url_for('select_book', book_id=book.id) }}'">Zaznacz</button>
                     </div>
