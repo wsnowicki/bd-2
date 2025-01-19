@@ -53,8 +53,8 @@ def register():
     if request.method == 'POST':
         login = request.form['login']
         password = request.form['password']
-	email =request.form['email']
-	tel = request.form['tel']
+        email = request.form['email']
+        tel = request.form['tel']
         if (register_status := register_user(conn, login, password,email,tel)) == Status.OK:
             session['user'] = login
             return redirect(url_for('search'))
