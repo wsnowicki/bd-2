@@ -1,9 +1,9 @@
 import psycopg2
 conn = psycopg2.connect(
-    dbname="twoja_baza",
-    user="twoj_user",
-    password="twoje_haslo",
-    host="localhost",
+    dbname="biblioteka",
+    user="ubiblioteka",
+    password="123454321",
+    host="127.0.0.1",
     port="5432"
 )
 cur = conn.cursor()
