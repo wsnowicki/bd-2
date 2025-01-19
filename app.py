@@ -121,22 +121,23 @@ def search():
             port=db_port
         )
         cursor = connection.cursor()
-        zap="SELECT books.title,books.is_available,books.year_published,books.isbn,books.cover_image,authors.name FROM books INNER JOIN authors ON books.author_id = authors.author_id WHERE authors.name LIKE '%"
-        if '"' in str(author):
-            pass
-        elif "'" in str(author):
+        zap="SELECT books.title, books.is_available, books.year_published, books.isbn, authors.name, books.cover_image FROM books INNER JOIN authors ON books.author_id = authors.author_id WHERE authors.name LIKE '%"
+        if '"' in str(author) or "'" in str(author):
             pass
         else:
             zap+=str(author)
+
         zap+="%' AND books.title LIKE '%"
-        if '"' in str(nazwa):
+
+        if '"' in str(nazwa) or "'" in str(nazwa):
             pass
-        elif "'" in str(author):
-            pass
-        else:       
+        else:
             zap+=str(nazwa)
         zap+="%';"
-        odp=cursor.execute(zap)
+
+        cursor.execute(zap)
+        odp = cursor.fetchall()
+        
         if odp is not None:
             total_pagess = len(odp)//10 + bool(len(odp) % 10)
         else:
