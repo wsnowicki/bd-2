@@ -122,21 +122,24 @@ def search():
         )
         cursor = connection.cursor()
         zap="SELECT books.title,books.is_available,books.year_published,books.isbn,authors.name FROM books INNER JOIN authors ON books.author_id = authors.author_id WHERE authors.name LIKE '%"
-        if '"' in str(author):
-            pass
-        elif "'" in str(author):
+        
+        if '"' in str(author) or "'" in str(author):
             pass
         else:
             zap+=str(author)
+
         zap+="%' AND books.title LIKE '%"
-        if '"' in str(nazwa):
+
+        if '"' in str(nazwa) or "'" in str(nazwa):
             pass
-        elif "'" in str(author):
-            pass
-        else:       
+        else:
             zap+=str(nazwa)
         zap+="%';"
-        odp=cursor.execute(zap)
+
+        cursor.execute(zap)
+        odp = cursor.fetchall()
+        
+        print(odp)
         if odp is not None:
             total_pagess = len(odp)//10 + bool(len(odp) % 10)
         else:
@@ -162,7 +165,19 @@ def about():
 
 @app.route('/profile')
 def profile():
-    abort(404)
+    abort(501)
+
+@app.route('/order_book')
+def order_book():
+    abort(501)
+
+@app.route('/select_book')
+def select_book():
+    abort(501)
+
+@app.route('/list_books')
+def list_books():
+    abort(501)
 
 if __name__ == '__main__':
     app.run(debug=True, host=http_host, port=http_port)
