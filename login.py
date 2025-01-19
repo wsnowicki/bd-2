@@ -82,6 +82,7 @@ def login_user(conn, username, password):
     zap = f"SELECT password FROM borrowers WHERE name ='{username}';"
     odp = cursor.execute(zap)
     hashed_password = odp.fetchone()
+    
     if hashed_password is None:
         return Status.WRONG_LOGIN
 

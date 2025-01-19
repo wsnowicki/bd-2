@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session, j
 from dotenv import load_dotenv
 from os import getenv
 import psycopg2
+from login import *
 
 # Wczytanie zmiennych z pliku .env
 load_dotenv()
@@ -9,15 +10,11 @@ http_host = getenv("HTTP_HOST")
 http_port = getenv("HTTP_PORT")
 http_threads = getenv("HTTP_THREADS")
 
+
 # Stworzenie aplikacji i nadanie tajnego klucza
 app = Flask(__name__)
-app.secret_key = 'super_tajny_klucz_ktory_napewno_nie_jest_udostepniony_w_repo_w_plain_textZZ'
+app.secret_key = getenv("HTTP_SECRET_KEY")
 
-# Przykładowa baza użytkowników
-users = {
-    "admin": "admin",
-    "user": "user"
-}
 
 @app.route('/')
 def home():
@@ -28,12 +25,36 @@ def login():
     if request.method == 'POST':
         login = request.form['login']
         password = request.form['password']
-        if login in users and users[login] == password:
+
+        if (login_status := login_user(conn, login, password)) == Status.OK:
             session['user'] = login
             return redirect(url_for('search'))
-        else:
-            return render_template('EkranLogowania.html', alert="Błędny login lub hasło")
+        elif login_status == Status.WRONG_LOGIN:
+            return render_template('login.html', alert="Błędny login lub hasło")
+        elif login_status == Status.PASSWORD_TOO_LONG:
+            return render_template('login.html', alert="Hasło jest za długie")
     return render_template('EkranLogowania.html')
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+
+    # Jeszcze not implemented, brak htmla
+    abort(501)
+
+
+    if request.method == 'POST':
+        login = request.form['login']
+        password = request.form['password']
+
+        if (register_status := register_user(conn, login, password)) == Status.OK:
+            session['user'] = login
+            return redirect(url_for('search'))
+        elif register_status == Status.USER_EXISTS:
+            return render_template('register.html', alert="Użytkownik już istnieje")
+        elif register_status == Status.PASSWORD_TOO_LONG:
+            return render_template('register.html', alert="Hasło jest za długie")
+    return render_template('register.html')
+
 
 @app.route('/logout')
 def logout():
@@ -91,6 +112,10 @@ def search():
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('Blad.html'), 404
+
+@app.errorhandler(501)
+def not_implemented(e):
+    return render_template('notimplemented.html'), 501
 
 @app.route('/error')
 def error():
