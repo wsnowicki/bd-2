@@ -6,7 +6,7 @@ conn = psycopg2.connect(
     host="127.0.0.1",
     port="5432"
 )
-cur = conn.cur()
+cur = conn.cursor()
 cur.execute("INSERT INTO authors (author_id, name) VALUES ('1','Pablusz Gumoleusz');")
 cur.execute("INSERT INTO authors (author_id, name) VALUES ('2','Wincenty Przekichacz');")
 cur.execute("INSERT INTO authors (author_id, name) VALUES ('3','Linus Jabłko');")
