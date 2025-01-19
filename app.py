@@ -20,42 +20,68 @@ app.secret_key = getenv("HTTP_SECRET_KEY")
 def home():
     if 'user' in session:
         return redirect(url_for('search'))
-    
     return redirect(url_for('login'))
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if session.get('user'):
         return redirect(url_for('search'))
-    
+
     if request.method == 'POST':
         login = request.form['login']
         password = request.form['password']
 
-        if (login_status := login_user(conn, login, password)) == Status.OK:
+        db_user = getenv("DB_USER")
+        db_password = getenv("DB_PASSWORD")
+        db_host = getenv("DB_HOST", "127.0.0.1")
+        db_port = getenv("DB_PORT", "5432")
+        db_name = getenv("DB_DATABASE", "biblioteka")
+        connection = psycopg2.connect(
+            dbname=db_name,
+            user=db_user,
+            password=db_password,
+            host=db_host,
+            port=db_port
+        )
+
+        if (login_status := login_user(connection, login, password)) == Status.OK:
             session['user'] = login
             return redirect(url_for('search'))
         elif login_status == Status.WRONG_LOGIN:
-            return render_template('login.html', alert="Błędny login lub hasło")
+            return render_template('EkranLogowania.html', alert="Błędny login lub hasło")
         elif login_status == Status.PASSWORD_TOO_LONG:
-            return render_template('login.html', alert="Hasło jest za długie")
+            return render_template('EkranLogowania.html', alert="Hasło jest za długie")
     return render_template('EkranLogowania.html')
 
 @app.route('/register', methods=['GET', 'POST'])
-def register():
+def rejestracja():
     if session.get('user'):
-        return redirect(url_for('rejestracja'))
+        return redirect(url_for('search'))
 
     # Jeszcze not implemented, brak htmla
     abort(501)
 
 
     if request.method == 'POST':
+        db_user = getenv("DB_USER")
+        db_password = getenv("DB_PASSWORD")
+        db_host = getenv("DB_HOST", "127.0.0.1")
+        db_port = getenv("DB_PORT", "5432")
+        db_name = getenv("DB_DATABASE", "biblioteka")
+        connection = psycopg2.connect(
+            dbname=db_name,
+            user=db_user,
+            password=db_password,
+            host=db_host,
+            port=db_port
+        )
+
+
         login = request.form['login']
         password = request.form['password']
-	email =request.form['email']
-	tel = request.form['tel']
-        if (register_status := register_user(conn, login, password,email,tel)) == Status.OK:
+        email =request.form['email']
+        tel = request.form['tel']
+        if (register_status := register_user(connection, login, password,email,tel)) == Status.OK:
             session['user'] = login
             return redirect(url_for('search'))
         elif register_status == Status.USER_EXISTS:
