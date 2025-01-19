@@ -13,7 +13,7 @@ cur.execute("INSERT INTO authors (author_id, name) VALUES ('3','Linus Jabłko');
 cur.execute("INSERT INTO genres (genre_id, name) VALUES ('1','Western');")
 cur.execute("INSERT INTO genres (genre_id, name) VALUES ('2','Poradnik');")
 cur.execute("INSERT INTO genres (genre_id, name) VALUES ('3','Science-fiction');")
-with open(f"image1", "wb") as file:
+with open(f"image1.png", "rb") as file:
     bity=file.read()
 zap = f"INSERT INTO books (isbn, title, author_id, year_published,is_available,cover_image) VALUES ('322421','o trzech takich co wynaleźli UML-a','1','2020','1','{str(bity)}'"
 cur.execute(zap)
