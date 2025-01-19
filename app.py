@@ -139,6 +139,7 @@ def search():
         cursor.execute(zap)
         odp = cursor.fetchall()
         
+        print(odp)
         if odp is not None:
             total_pagess = len(odp)//10 + bool(len(odp) % 10)
         else:
@@ -164,7 +165,19 @@ def about():
 
 @app.route('/profile')
 def profile():
-    abort(404)
+    abort(501)
+
+@app.route('/order_book')
+def order_book():
+    abort(501)
+
+@app.route('/select_book')
+def select_book():
+    abort(501)
+
+@app.route('/list_books')
+def list_books():
+    abort(501)
 
 if __name__ == '__main__':
     app.run(debug=True, host=http_host, port=http_port)
