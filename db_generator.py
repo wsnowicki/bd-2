@@ -60,8 +60,8 @@ def create_tables():
         cursor.execute("""
             CREATE TABLE borrowers (
                 borrower_id SERIAL PRIMARY KEY,
-                name VARCHAR(255) NOT NULL,
-                email VARCHAR(255),
+                name VARCHAR(255) UNIQUE NOT NULL,
+                email VARCHAR(255) UNIQUE,
                 phone VARCHAR(15),
                 password CHAR(60)
             );
