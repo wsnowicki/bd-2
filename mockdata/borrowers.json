@@ -16,7 +16,7 @@
     },
     {
       "borrower_id": "3",
-      "name": "Jan",
+      "name": "Marek",
       "email": "Stonemaster@gmail.com",
       "phone": "334715612",
       "password":"$2b$12$wuy2pedJXKb7vUiAZqu9Ve2.pPXfwkzcZ.6hEw8aB.k/8sE/k8.ja"
@@ -37,7 +37,7 @@
     },
     {
       "borrower_id": "6",
-      "name": "Michał",
+      "name": "Bartlomiej",
       "email": "StoneHeart@gmail.com",
       "phone": "315333687",
       "password":"$2b$12$9Gvx7RUqPooM7lL8UHKZLeQ8zwDL7iQLDzZHT1UdUgznXzUq/yuFq"
@@ -380,15 +380,15 @@
     },
     {
       "borrower_id": "55",
-      "name": "Michał",
-      "email": "MichalBooks@gmail.com",
+      "name": "Kajetan",
+      "email": "KajetanBooks@gmail.com",
       "phone": "147852963",
        "password":"$2b$12$9Gvx7RUqPooM7lL8UHKZLeQ8zwDL7iQLDzZHT1UdUgznXzUq/yuFq"
     },
     {
       "borrower_id": "56",
-      "name": "Joanna",
-      "email": "JoannaReads@gmail.com",
+      "name": "Mieczyslawa",
+      "email": "Mieczyslawa@gmail.com",
       "phone": "963741258",
        "password":"$2b$12$9Gvx7RUqPooM7lL8UHKZLeQ8zwDL7iQLDzZHT1UdUgznXzUq/yuFq"
     },
