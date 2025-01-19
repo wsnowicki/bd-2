@@ -18,10 +18,16 @@ app.secret_key = getenv("HTTP_SECRET_KEY")
 
 @app.route('/')
 def home():
+    if 'user' in session:
+        return redirect(url_for('search'))
+    
     return redirect(url_for('login'))
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    if session.get('user'):
+        return redirect(url_for('search'))
+    
     if request.method == 'POST':
         login = request.form['login']
         password = request.form['password']
@@ -37,6 +43,8 @@ def login():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+    if session.get('user'):
+        return redirect(url_for('search'))
 
     # Jeszcze not implemented, brak htmla
     abort(501)
@@ -50,10 +58,10 @@ def register():
             session['user'] = login
             return redirect(url_for('search'))
         elif register_status == Status.USER_EXISTS:
-            return render_template('register.html', alert="Użytkownik już istnieje")
+            return render_template('rejestracja.html', alert="Użytkownik już istnieje")
         elif register_status == Status.PASSWORD_TOO_LONG:
-            return render_template('register.html', alert="Hasło jest za długie")
-    return render_template('register.html')
+            return render_template('rejestracja.html', alert="Hasło jest za długie")
+    return render_template('rejestracja.html')
 
 
 @app.route('/logout')
@@ -111,11 +119,11 @@ def search():
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('Blad.html'), 404
+    return render_template('404.html'), 404
 
 @app.errorhandler(501)
 def not_implemented(e):
-    return render_template('notimplemented.html'), 501
+    return render_template('501.html'), 501
 
 @app.route('/error')
 def error():
