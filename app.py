@@ -44,7 +44,7 @@ def login():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if session.get('user'):
-        return redirect(url_for('search'))
+        return redirect(url_for('rejestracja'))
 
     # Jeszcze not implemented, brak htmla
     abort(501)
@@ -53,8 +53,9 @@ def register():
     if request.method == 'POST':
         login = request.form['login']
         password = request.form['password']
-
-        if (register_status := register_user(conn, login, password)) == Status.OK:
+	email =request.form['email']
+	tel = request.form['tel']
+        if (register_status := register_user(conn, login, password,email,tel)) == Status.OK:
             session['user'] = login
             return redirect(url_for('search'))
         elif register_status == Status.USER_EXISTS:

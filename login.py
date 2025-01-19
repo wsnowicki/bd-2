@@ -46,11 +46,10 @@ def verify_password(password, hashed):
     """Funkcja do weryfikacji hasła."""
     return bcrypt.checkpw(password.encode('utf-8'), hashed)
 
-def register_user(conn, username: str, password: str):
+def register_user(conn, username: str, password: str, email: str,telephone: str):
     """Funkcja rejestrująca użytkownika."""
 
-    email='testowy@gmail'
-    telephone='111333222'
+    
 
     cursor = conn.cursor()
     
